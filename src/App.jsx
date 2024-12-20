@@ -37,6 +37,7 @@ function App() {
       // Sender Address
       const senderAddress = "EhmycoHGjGLzQAwZwnDwnCfrmxnueW5LF1AY9MDS6SwN";
       const source = Wormhole.chainAddress(sendChain.chain, senderAddress);
+      console.log("Sender Address:", source.address.address.toBase58());
 
       // Receiver Chain
       const rcvChain = wh.getChain("Ethereum");
@@ -48,6 +49,7 @@ function App() {
         rcvChain.chain,
         receiverAddress
       );
+      console.log("Receiver Address:", destination);
 
       // Token Details
       const token = Wormhole.tokenId(
