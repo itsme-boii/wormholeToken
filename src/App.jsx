@@ -31,6 +31,7 @@ function App() {
 
       // Send Chain
       const sendChain = wh.getChain("Solana");
+      sendChain.getAutomaticTokenBridge();
       console.log("Send Chain:", sendChain);
 
       // Sender Address
@@ -50,7 +51,7 @@ function App() {
 
       // Token Details
       const token = Wormhole.tokenId(
-        source.chain,
+        sendChain.chain,
         "7VPWjBhCXrpYYBiRKZh1ubh9tLZZNkZGp2ReRphEV4Mc"
       );
       console.log("Token:", token);
